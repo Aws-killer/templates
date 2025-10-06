@@ -12,15 +12,20 @@
   "license": "UNLICENSED",
   "dependencies": {
     "@remotion/cli": "^4.0.0",
+    "@remotion/google-fonts": "^4.0.355",
+    "express": "^5.1.0",
     "react": "19.0.0",
     "react-dom": "19.0.0",
     "remotion": "^4.0.0",
+    "uuid": "^13.0.0",
     "zod": "3.22.3"
   },
   "devDependencies": {
     "@remotion/eslint-config-flat": "^4.0.0",
+    "@remotion/tailwind-v4": "^4.0.355",
+    "eslint": "9.19.0",
     "prettier": "3.6.0",
-    "eslint": "9.19.0"
+    "tailwindcss": "^4.1.14"
   },
   "private": true
 }
