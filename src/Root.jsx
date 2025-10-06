@@ -1,11 +1,10 @@
 import { Composition } from "remotion";
 import {
-  PodcastIntro,
+
   HeadlinesGrid,
-  FeaturedStory,
-  DeepDive,
+
 } from "./HelloWorld";
-import { Logo } from "./HelloWorld/Logo";
+
 
 export const RemotionRoot = () => {
   return (
