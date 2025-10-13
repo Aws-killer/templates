@@ -147,42 +147,41 @@ export const SearchResultScene = ({
   const bboxCenterY =
     (pageHeight - match.boundingBox.y - match.boundingBox.height / 2) * scale;
 
-  // Animation sequence
-  const ANIMATION_SEQUENCE = {
-    SLIDE_UP: [0, fps * 0.5], // 0.5 seconds to slide up
-    PAUSE: [fps * 0.5, fps * 0.8], // 0.3 second pause
-    ZOOM: [fps * 0.8, fps * 1.5], // 0.7 seconds to zoom
-  };
+  // --- SMOOTHER ANIMATION LOGIC ---
 
-  // 1. Slide up animation
-  const slideUp = interpolate(
+  // 1. Slide up animation using a spring for a natural bounce
+  const slideUpProgress = spring({
     frame,
-    ANIMATION_SEQUENCE.SLIDE_UP,
-    [videoHeight + 100, leftPanelCenterY - pdfContainerHeight / 2],
-    { extrapolateRight: "clamp" },
+    fps,
+    config: {
+      damping: 15,
+      stiffness: 100,
+      mass: 0.8,
+    },
+  });
+
+  const slideUp = interpolate(
+    slideUpProgress,
+    [0, 1],
+    [videoHeight + 100, leftPanelCenterY - pdfContainerHeight / 2]
   );
 
-  // 2. Zoom animation (only starts after pause)
+  // 2. Zoom animation that starts slightly after the slide-up begins
   const zoomProgress = spring({
-    frame: frame - ANIMATION_SEQUENCE.ZOOM[0],
+    frame: frame - 20, // Start the zoom animation after 20 frames
     fps,
-    from: 0,
-    to: 1,
     config: {
-      stiffness: 100,
-      damping: 20,
+      damping: 15,
+      stiffness: 120,
     },
   });
 
   const zoomLevel = interpolate(zoomProgress, [0, 1], [1, zoomTo]);
 
-  // 3. Text fade in after zoom starts
-  const textFadeIn = interpolate(
-    frame,
-    [ANIMATION_SEQUENCE.ZOOM[0], ANIMATION_SEQUENCE.ZOOM[0] + fps * 0.3],
-    [0, 1],
-    { extrapolateRight: "clamp" },
-  );
+  // 3. Text fade-in animation, timed to start as the zoom begins
+  const textFadeIn = interpolate(frame, [25, 45], [0, 1], {
+    extrapolateRight: "clamp",
+  });
 
   return (
     <AbsoluteFill style={{ backgroundColor: "#1e293b" }}>
