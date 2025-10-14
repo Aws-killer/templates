@@ -1,7 +1,7 @@
+import React, { useMemo } from "react";
 import {
   AbsoluteFill,
   interpolate,
-  Easing,
   useCurrentFrame,
   useVideoConfig,
   Img,
@@ -9,18 +9,26 @@ import {
   spring,
 } from "remotion";
 
+// --- 1. Load Excalifont ---
+const fontCss = `
+@font-face {
+  font-family: 'Excalifont';
+  src: url('https://excalidraw.nyc3.cdn.digitaloceanspaces.com/oss/fonts/Excalifont/Excalifont-Regular-a88b72a24fb54c9f94e3b5fdaa7481c9.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+`;
+
 // Unchanged Component: MarkerHighlight
 const MarkerHighlight = ({ bbox, scale, pageHeight }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
 
   const drawProgress = spring({
-    frame: frame - 20, // Delayed to start after the zoom settles
+    frame: frame - 20,
     fps,
-    config: {
-      damping: 100,
-      stiffness: 150,
-    },
+    config: { damping: 100, stiffness: 150 },
   });
 
   const y = (pageHeight - bbox.y - bbox.height) * scale;
@@ -46,80 +54,59 @@ const MarkerHighlight = ({ bbox, scale, pageHeight }) => {
   );
 };
 
-// Unchanged Component: MatchBadge
-const MatchBadge = ({ bbox, scale, matchNumber, pageHeight }) => {
+// --- NEW COMPONENT: Handwritten Notes ---
+const HandwrittenNotes = ({ text, startFrame }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
-  const slideDown = interpolate(frame, [0, fps * 0.4], [-30, 0], {
-    easing: Easing.out(Easing.cubic),
-    extrapolateRight: "clamp",
+
+  // 1. Fade in container
+  const containerOpacity = spring({
+    frame: frame - startFrame,
+    fps,
+    config: { mass: 0.5 },
   });
-  const y = pageHeight - bbox.y - bbox.height;
+
+  // 2. Typewriter effect progress (0 to 1 over time)
+  const typeProgress = spring({
+    frame: frame - startFrame,
+    fps,
+    config: { damping: 200, stiffness: 50 }, // Slower, linear feel
+  });
+
+  // Calculate how many characters to show based on progress
+  const charsToShow = Math.floor(typeProgress * text.length);
+  const currentText = text.substring(0, charsToShow);
 
   return (
     <div
-      style={{
-        position: "absolute",
-        left: bbox.x * scale + 5,
-        top: y * scale + 5 + slideDown,
-        backgroundColor: "rgb(220, 38, 38)",
-        color: "white",
-        padding: "4px 8px",
-        borderRadius: "4px",
-        fontSize: "14px",
-        fontWeight: "bold",
-        zIndex: 10,
-      }}
+      className="absolute top-8 left-8 z-20 max-w-xs"
+      style={{ opacity: containerOpacity }}
     >
-      #{matchNumber}
+      {/* Excalidraw-style paper background */}
+      <div
+        className="bg-[#ffffe0] text-gray-900 p-6 rounded-sm shadow-md rotate-[-2deg] border border-gray-300"
+        style={{ fontFamily: "'Excalifont', cursive" }}
+      >
+        <h3 className="text-2xl font-bold mb-2 border-b border-gray-400 pb-1">Notes</h3>
+        <p className="text-xl leading-relaxed whitespace-pre-wrap">
+          {currentText}
+          {/* Blinking cursor */}
+          <span
+            style={{
+              opacity: interpolate(frame, [0, 15, 30], [1, 0, 1], {
+                extrapolateRight: "clamp",
+              }) % 1,
+            }}
+          >
+            |
+          </span>
+        </p>
+      </div>
     </div>
   );
 };
 
-// Unchanged Component: MatchInfo
-const MatchInfo = ({ match, matchNumber }) => {
-  const frame = useCurrentFrame();
-  const { fps } = useVideoConfig();
-  const fadeIn = interpolate(frame, [fps * 0.5, fps * 1.5], [0, 1], {
-    easing: Easing.out(Easing.cubic),
-    extrapolateLeft: "clamp",
-    extrapolateRight: "clamp",
-  });
-
-  return (
-    <div
-      style={{
-        position: "absolute",
-        bottom: "20px",
-        left: "20px",
-        right: "20px",
-        backgroundColor: "rgba(0, 0, 0, 0.8)",
-        color: "white",
-        padding: "16px",
-        borderRadius: "8px",
-        fontSize: "14px",
-        fontFamily: "system-ui, sans-serif",
-        opacity: fadeIn,
-        zIndex: 20,
-      }}
-    >
-      <div style={{ fontWeight: "bold", marginBottom: "8px" }}>
-        Match #{matchNumber} - Page {match.page}
-      </div>
-      <div style={{ marginBottom: "8px", fontSize: "12px", opacity: 0.9 }}>
-        {match.text.substring(0, 150)}
-        {match.text.length > 150 ? "..." : ""}
-      </div>
-      {match.fuzzyMatch && (
-        <div style={{ fontSize: "11px", color: "rgb(168, 85, 247)" }}>
-          [Fuzzy Match]
-        </div>
-      )}
-    </div>
-  );
-};
-
-// Main Scene Component (UPDATED WITH ZOOM)
+// Main Scene Component
 export const SearchResultScene = ({
   match,
   matchNumber,
@@ -127,192 +114,176 @@ export const SearchResultScene = ({
   pageHeight = 792,
   pageImageFile = "page_2.png",
   zoomTo = 1.5,
+  // New Props for timing and notes
+  notesText = "Review this section carefully.\nKey evidence found here.",
+  notesStartFrame = 10,
+  modalStartFrame = 25,
+  modalDuration = 120, // How long the modal stays visible
 }) => {
   const frame = useCurrentFrame();
   const { fps, width: videoWidth, height: videoHeight } = useVideoConfig();
-  const scale = 0.7;
+  const scale = 0.85;
 
-  // Panel dimensions (50-50 split)
-  const panelWidth = videoWidth / 2;
-  const leftPanelCenterX = panelWidth / 2;
-  const leftPanelCenterY = videoHeight / 2;
-
-  // PDF container dimensions
+  // PDF setup
   const pdfContainerWidth = pageWidth * scale;
   const pdfContainerHeight = pageHeight * scale;
+  const bboxCenterX = (match.boundingBox.x + match.boundingBox.width / 2) * scale;
+  const bboxCenterY = (pageHeight - match.boundingBox.y - match.boundingBox.height / 2) * scale;
 
-  // Bounding box center for zoom
-  const bboxCenterX =
-    (match.boundingBox.x + match.boundingBox.width / 2) * scale;
-  const bboxCenterY =
-    (pageHeight - match.boundingBox.y - match.boundingBox.height / 2) * scale;
+  // --- ANIMATIONS ---
 
-  // --- SMOOTHER ANIMATION LOGIC ---
-
-  // 1. Slide up animation using a spring for a natural bounce
-  const slideUpProgress = spring({
-    frame,
-    fps,
-    config: {
-      damping: 15,
-      stiffness: 100,
-      mass: 0.8,
-    },
-  });
-
-  const slideUp = interpolate(
-    slideUpProgress,
+  // 1. PDF Animations
+  const pdfSlideUp = interpolate(
+    spring({ frame: frame - 5, fps, config: { damping: 100 } }),
     [0, 1],
-    [videoHeight + 100, leftPanelCenterY - pdfContainerHeight / 2]
+    [videoHeight, 0]
+  );
+  const pdfOpacity = interpolate(frame, [5, 20], [0, 1], { extrapolateRight: 'clamp' });
+  const zoomLevel = interpolate(
+    spring({ frame: frame - 20, fps, config: { damping: 100 } }),
+    [0, 1],
+    [1, zoomTo]
   );
 
-  // 2. Zoom animation that starts slightly after the slide-up begins
-  const zoomProgress = spring({
-    frame: frame - 20, // Start the zoom animation after 20 frames
+  // 2. Right Modal Animations (Enter -> Wait -> Exit)
+  const modalExitFrame = modalStartFrame + modalDuration;
+
+  // Entrance Spring
+  const modalEnterProgress = spring({
+    frame: frame - modalStartFrame,
     fps,
-    config: {
-      damping: 15,
-      stiffness: 120,
-    },
+    config: { stiffness: 120, damping: 14 },
   });
 
-  const zoomLevel = interpolate(zoomProgress, [0, 1], [1, zoomTo]);
-
-  // 3. Text fade-in animation, timed to start as the zoom begins
-  const textFadeIn = interpolate(frame, [25, 45], [0, 1], {
-    extrapolateRight: "clamp",
+  // Exit Spring
+  const modalExitProgress = spring({
+    frame: frame - modalExitFrame,
+    fps,
+    config: { stiffness: 120, damping: 14 },
   });
+
+  // Combine for opacity: (0->1) during enter, then minus (0->1) during exit forces it back to 0
+  // We use Math.max to ensure it doesn't go below 0.
+  const rawModalOpacity = modalEnterProgress - modalExitProgress;
+  const modalOpacity = Math.max(0, Math.min(1, rawModalOpacity));
+
+  // Slide In from right, Slide Out to right
+  const modalTranslateX = interpolate(
+    modalEnterProgress,
+    [0, 1],
+    [50, 0]
+  ) + interpolate(
+    modalExitProgress,
+    [0, 1],
+    [0, 50]
+  );
+
+  // Only render modal logic if it has started and hasn't fully exited
+  const showModal = frame >= modalStartFrame && modalOpacity > 0.01;
 
   return (
-    <AbsoluteFill style={{ backgroundColor: "#1e293b" }}>
-      {/* Title */}
-      <div
-        style={{
-          position: "absolute",
-          top: "20px",
-          left: "20px",
-          color: "white",
-          fontSize: "28px",
-          fontWeight: "bold",
-          fontFamily: "system-ui, sans-serif",
-          zIndex: 5,
-        }}
-      >
-        PDF Search Results
-      </div>
+    <AbsoluteFill className="bg-gray-950">
+      {/* Inject Custom Font */}
+      <style>{fontCss}</style>
 
-      {/* Left Panel - PDF */}
-      <div
-        style={{
-          position: "absolute",
-          left: 0,
-          width: panelWidth,
-          height: videoHeight,
-          overflow: "hidden",
-        }}
-      >
-        <div
-          style={{
-            position: "absolute",
-            top: slideUp,
-            left: leftPanelCenterX - pdfContainerWidth / 2,
-            transformOrigin: `${bboxCenterX}px ${bboxCenterY}px`,
-            transform: `scale(${zoomLevel})`,
-            width: pdfContainerWidth,
-            height: pdfContainerHeight,
-            backgroundColor: "white",
-            borderRadius: "8px",
-            boxShadow: "0 20px 60px rgba(0, 0, 0, 0.5)",
-            overflow: "hidden",
-          }}
-        >
-          <Img
-            src={staticFile(pageImageFile)}
-            style={{
-              position: "absolute",
-              inset: 0,
-              width: "100%",
-              height: "100%",
-              objectFit: "cover",
-            }}
-            alt="PDF page"
-          />
+      <div className="grid grid-cols-5 gap-4 w-full h-full">
+        
+        {/* --- LEFT PANEL (Cols 1-3): PDF + NOTES --- */}
+        <div className="col-span-3 relative w-full h-full">
+          
+          {/* 1. PERMANENT NOTES (Animated In) */}
+          <HandwrittenNotes text={notesText} startFrame={notesStartFrame} />
 
-          <AbsoluteFill style={{ mixBlendMode: "multiply" }}>
-            <svg
-              width="100%"
-              height="100%"
-              viewBox={`0 0 ${pageWidth * scale} ${pageHeight * scale}`}
+          {/* 2. PDF VIEWER (Centered in this panel) */}
+          <div className="w-full h-full flex items-center justify-center p-8 z-10">
+            <div
+              className="bg-white rounded-lg shadow-2xl overflow-hidden"
+              style={{
+                width: pdfContainerWidth,
+                height: pdfContainerHeight,
+                transformOrigin: `${bboxCenterX}px ${bboxCenterY}px`,
+                opacity: pdfOpacity,
+                transform: `translateY(${pdfSlideUp}px) scale(${zoomLevel})`,
+              }}
             >
-              <defs>
-                <filter id="realisticHighlightEffect">
-                  <feTurbulence
-                    type="fractalNoise"
-                    baseFrequency="0.04"
-                    numOctaves="5"
-                  />
-                  <feDisplacementMap in="SourceGraphic" scale="5" />
-                  <feDropShadow
-                    dx="2"
-                    dy="3"
-                    stdDeviation="2"
-                    floodColor="rgba(0,0,0,0.4)"
-                  />
-                </filter>
-              </defs>
-              <MarkerHighlight
-                bbox={match.boundingBox}
-                scale={scale}
-                pageHeight={pageHeight}
+              <Img
+                src={staticFile(pageImageFile)}
+                className="w-full h-full object-cover"
+                alt="PDF page"
               />
-            </svg>
-          </AbsoluteFill>
-        </div>
-      </div>
-
-      {/* Right Panel - Text */}
-      <div
-        style={{
-          position: "absolute",
-          right: 0,
-          width: panelWidth,
-          height: videoHeight,
-          padding: "40px",
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          color: "white",
-          opacity: textFadeIn,
-        }}
-      >
-        <h2 style={{ fontSize: "24px", marginBottom: "20px" }}>
-          Match #{matchNumber} - Page {match.page}
-        </h2>
-
-        <div
-          style={{
-            fontSize: "18px",
-            lineHeight: "1.6",
-            marginBottom: "20px",
-            backgroundColor: "rgba(255,255,255,0.1)",
-            padding: "20px",
-            borderRadius: "8px",
-          }}
-        >
-          {match.text}
-        </div>
-
-        {match.fuzzyMatch && (
-          <div
-            style={{
-              fontSize: "14px",
-              color: "rgb(168, 85, 247)",
-              fontStyle: "italic",
-            }}
-          >
-            [Fuzzy Match]
+              <AbsoluteFill style={{ mixBlendMode: "multiply" }}>
+                <svg
+                  width="100%"
+                  height="100%"
+                  viewBox={`0 0 ${pdfContainerWidth} ${pdfContainerHeight}`}
+                >
+                  <defs>
+                    <filter id="realisticHighlightEffect">
+                      <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="5" />
+                      <feDisplacementMap in="SourceGraphic" scale="5" />
+                    </filter>
+                  </defs>
+                  <MarkerHighlight
+                    bbox={match.boundingBox}
+                    scale={scale}
+                    pageHeight={pageHeight}
+                  />
+                </svg>
+              </AbsoluteFill>
+            </div>
           </div>
-        )}
+        </div>
+
+        {/* --- RIGHT PANEL (Cols 4-5): TEMPORARY MODAL --- */}
+        <div className="col-span-2 flex items-center justify-center p-8 relative">
+          {showModal && (
+            <div
+              className="rounded-2xl bg-gray-900/90 backdrop-blur-md p-10 outline outline-1 outline-white/10 w-full grid grid-cols-1 gap-y-8 shadow-[0_0_50px_-12px_rgb(0,0,0,0.5)]"
+              style={{
+                opacity: modalOpacity,
+                transform: `translateX(${modalTranslateX}px)`,
+              }}
+            >
+              {/* Header / Tag */}
+              <div className="flex gap-2 items-center">
+                <svg aria-hidden="true" viewBox="0 0 16 16" className="h-6 w-4 shrink-0 text-gray-500">
+                  <path fill="currentColor" d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zM1.5 8a6.5 6.5 0 1 1 13 0 6.5 6.5 0 0 1-13 0z"/>
+                  <path fill="currentColor" d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z"/>
+                </svg>
+                <p className="text-sky-400 font-mono text-[0.8125rem]/6 font-medium tracking-widest uppercase">
+                  Search Result
+                </p>
+              </div>
+              
+              {/* Page Number */}
+              <div className="flex items-center gap-x-4 text-white">
+                <p className="text-5xl font-light">
+                  Page <span className="font-medium text-sky-200">{match.page}</span>
+                </p>
+                <div className="px-3 py-1 rounded-full bg-white/10 text-xs font-medium text-gray-300 border border-white/5">
+                  Match #{matchNumber}
+                </div>
+              </div>
+
+              {/* Match Text */}
+              <div className="relative">
+                <div className="absolute left-0 top-0 bottom-0 w-1 bg-sky-500 rounded-full"></div>
+                <p className="pl-4 text-lg leading-7 text-gray-300 font-light italic">
+                  "{match.text}"
+                </p>
+              </div>
+
+              {match.fuzzyMatch && (
+                <div className="flex items-center gap-2 text-sm font-medium text-purple-400 bg-purple-400/10 px-3 py-2 rounded-md w-fit border border-purple-400/20">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-4 h-4">
+                    <path d="M10 1a6 6 0 00-3.815 10.631C7.237 12.5 8 13.443 8 14.456v.644a.75.75 0 00.572.729 6.001 6.001 0 002.856 0A.75.75 0 0012 15.1v-.644c0-1.013.762-1.957 1.815-2.825A6 6 0 0010 1zM8.863 17.414a.75.75 0 00-.226 1.483 9.001 9.001 0 002.726 0 .75.75 0 00-.226-1.483 7.501 7.501 0 01-2.274 0z" />
+                  </svg>
+                  Approximate Match
+                </div>
+              )}
+            </div>
+          )}
+        </div>
       </div>
     </AbsoluteFill>
   );
