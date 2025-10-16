@@ -1,0 +1,2549 @@
+{
+  "language": "en",
+  "language_probability": 1,
+  "duration": 138.371,
+  "segments": [
+    {
+      "id": 1,
+      "start": 0.0,
+      "end": 3.58,
+      "text": "Alright, welcome everyone to Infinite Talk.",
+      "words": [
+        {
+          "word": " Alright,",
+          "start": 0.0,
+          "end": 0.92,
+          "probability": 0.4253552556037903
+        },
+        {
+          "word": " welcome",
+          "start": 1.7,
+          "end": 1.9,
+          "probability": 0.9617511630058289
+        },
+        {
+          "word": " everyone",
+          "start": 1.9,
+          "end": 2.52,
+          "probability": 0.9575376510620117
+        },
+        {
+          "word": " to",
+          "start": 2.52,
+          "end": 2.88,
+          "probability": 0.9964501857757568
+        },
+        {
+          "word": " Infinite",
+          "start": 2.88,
+          "end": 3.2,
+          "probability": 0.7891973257064819
+        },
+        {
+          "word": " Talk.",
+          "start": 3.2,
+          "end": 3.58,
+          "probability": 0.934800386428833
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "start": 3.92,
+      "end": 7.0,
+      "text": "Today, we're breaking down with this season is all about",
+      "words": [
+        {
+          "word": " Today,",
+          "start": 3.92,
+          "end": 4.36,
+          "probability": 0.9919760823249817
+        },
+        {
+          "word": " we're",
+          "start": 4.46,
+          "end": 4.7,
+          "probability": 0.9771157503128052
+        },
+        {
+          "word": " breaking",
+          "start": 4.7,
+          "end": 4.98,
+          "probability": 0.9943272471427917
+        },
+        {
+          "word": " down",
+          "start": 4.98,
+          "end": 5.3,
+          "probability": 0.9989859461784363
+        },
+        {
+          "word": " with",
+          "start": 5.3,
+          "end": 5.52,
+          "probability": 0.5162559747695923
+        },
+        {
+          "word": " this",
+          "start": 5.52,
+          "end": 5.82,
+          "probability": 0.9933470487594604
+        },
+        {
+          "word": " season",
+          "start": 5.82,
+          "end": 6.08,
+          "probability": 0.9960863590240479
+        },
+        {
+          "word": " is",
+          "start": 6.08,
+          "end": 6.32,
+          "probability": 0.7278128862380981
+        },
+        {
+          "word": " all",
+          "start": 6.32,
+          "end": 6.48,
+          "probability": 0.9925010800361633
+        },
+        {
+          "word": " about",
+          "start": 6.48,
+          "end": 7.0,
+          "probability": 0.9977939128875732
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "start": 7.0,
+      "end": 10.48,
+      "text": "a roadmap, our chapters, the journey ahead.",
+      "words": [
+        {
+          "word": " a",
+          "start": 7.0,
+          "end": 7.46,
+          "probability": 0.19797231256961823
+        },
+        {
+          "word": " roadmap,",
+          "start": 7.46,
+          "end": 7.88,
+          "probability": 0.8549684286117554
+        },
+        {
+          "word": " our",
+          "start": 8.5,
+          "end": 8.56,
+          "probability": 0.959048330783844
+        },
+        {
+          "word": " chapters,",
+          "start": 8.56,
+          "end": 9.08,
+          "probability": 0.9852268695831299
+        },
+        {
+          "word": " the",
+          "start": 9.56,
+          "end": 9.64,
+          "probability": 0.8627678155899048
+        },
+        {
+          "word": " journey",
+          "start": 9.64,
+          "end": 9.96,
+          "probability": 0.933462381362915
+        },
+        {
+          "word": " ahead.",
+          "start": 9.96,
+          "end": 10.48,
+          "probability": 0.9995463490486145
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "start": 10.8,
+      "end": 13.74,
+      "text": "Yeah, think of this as our audio table of contents.",
+      "words": [
+        {
+          "word": " Yeah,",
+          "start": 10.8,
+          "end": 11.2,
+          "probability": 0.7984380125999451
+        },
+        {
+          "word": " think",
+          "start": 11.24,
+          "end": 11.42,
+          "probability": 0.9912029504776001
+        },
+        {
+          "word": " of",
+          "start": 11.42,
+          "end": 11.6,
+          "probability": 0.9989277720451355
+        },
+        {
+          "word": " this",
+          "start": 11.6,
+          "end": 11.86,
+          "probability": 0.9990776777267456
+        },
+        {
+          "word": " as",
+          "start": 11.86,
+          "end": 12.14,
+          "probability": 0.9928877949714661
+        },
+        {
+          "word": " our",
+          "start": 12.14,
+          "end": 12.46,
+          "probability": 0.993269145488739
+        },
+        {
+          "word": " audio",
+          "start": 12.46,
+          "end": 12.74,
+          "probability": 0.9001870155334473
+        },
+        {
+          "word": " table",
+          "start": 12.74,
+          "end": 13.06,
+          "probability": 0.935989260673523
+        },
+        {
+          "word": " of",
+          "start": 13.06,
+          "end": 13.38,
+          "probability": 0.9974297881126404
+        },
+        {
+          "word": " contents.",
+          "start": 13.38,
+          "end": 13.74,
+          "probability": 0.9909981489181519
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "start": 14.12,
+      "end": 18.0,
+      "text": "Each section you'll hear us mention from section 1 to section 6",
+      "words": [
+        {
+          "word": " Each",
+          "start": 14.12,
+          "end": 14.42,
+          "probability": 0.9924353957176208
+        },
+        {
+          "word": " section",
+          "start": 14.42,
+          "end": 14.82,
+          "probability": 0.9936476349830627
+        },
+        {
+          "word": " you'll",
+          "start": 14.82,
+          "end": 15.04,
+          "probability": 0.9571613669395447
+        },
+        {
+          "word": " hear",
+          "start": 15.04,
+          "end": 15.2,
+          "probability": 0.998685896396637
+        },
+        {
+          "word": " us",
+          "start": 15.2,
+          "end": 15.42,
+          "probability": 0.9885687828063965
+        },
+        {
+          "word": " mention",
+          "start": 15.42,
+          "end": 15.74,
+          "probability": 0.9751204252243042
+        },
+        {
+          "word": " from",
+          "start": 15.74,
+          "end": 16.3,
+          "probability": 0.7831113338470459
+        },
+        {
+          "word": " section",
+          "start": 16.3,
+          "end": 16.62,
+          "probability": 0.791066586971283
+        },
+        {
+          "word": " 1",
+          "start": 16.62,
+          "end": 16.96,
+          "probability": 0.49600744247436523
+        },
+        {
+          "word": " to",
+          "start": 16.96,
+          "end": 17.22,
+          "probability": 0.976205587387085
+        },
+        {
+          "word": " section",
+          "start": 17.22,
+          "end": 17.54,
+          "probability": 0.9879863858222961
+        },
+        {
+          "word": " 6",
+          "start": 17.54,
+          "end": 18.0,
+          "probability": 0.9956521391868591
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "start": 18.0,
+      "end": 20.12,
+      "text": "is a key part of the story we're telling.",
+      "words": [
+        {
+          "word": " is",
+          "start": 18.0,
+          "end": 18.36,
+          "probability": 0.8921791911125183
+        },
+        {
+          "word": " a",
+          "start": 18.36,
+          "end": 18.62,
+          "probability": 0.988878071308136
+        },
+        {
+          "word": " key",
+          "start": 18.62,
+          "end": 18.84,
+          "probability": 0.9963721036911011
+        },
+        {
+          "word": " part",
+          "start": 18.84,
+          "end": 19.04,
+          "probability": 0.9993352293968201
+        },
+        {
+          "word": " of",
+          "start": 19.04,
+          "end": 19.22,
+          "probability": 0.9978234767913818
+        },
+        {
+          "word": " the",
+          "start": 19.22,
+          "end": 19.34,
+          "probability": 0.996005117893219
+        },
+        {
+          "word": " story",
+          "start": 19.34,
+          "end": 19.56,
+          "probability": 0.9953312277793884
+        },
+        {
+          "word": " we're",
+          "start": 19.56,
+          "end": 20.12,
+          "probability": 0.9910499453544617
+        },
+        {
+          "word": " telling.",
+          "start": 20.12,
+          "end": 20.12,
+          "probability": 0.9949175119400024
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "start": 20.6,
+      "end": 23.1,
+      "text": "So let's start with section 1, introduction.",
+      "words": [
+        {
+          "word": " So",
+          "start": 20.6,
+          "end": 20.64,
+          "probability": 0.9828994870185852
+        },
+        {
+          "word": " let's",
+          "start": 20.64,
+          "end": 20.98,
+          "probability": 0.9055702388286591
+        },
+        {
+          "word": " start",
+          "start": 20.98,
+          "end": 21.3,
+          "probability": 0.9988973140716553
+        },
+        {
+          "word": " with",
+          "start": 21.3,
+          "end": 21.62,
+          "probability": 0.998999297618866
+        },
+        {
+          "word": " section",
+          "start": 21.62,
+          "end": 21.88,
+          "probability": 0.9528260231018066
+        },
+        {
+          "word": " 1,",
+          "start": 21.88,
+          "end": 22.48,
+          "probability": 0.9656684994697571
+        },
+        {
+          "word": " introduction.",
+          "start": 23.1,
+          "end": 23.1,
+          "probability": 0.4922727942466736
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "start": 23.76,
+      "end": 27.52,
+      "text": "This is where we'll talk about why Infinite Talk exists in the first place,",
+      "words": [
+        {
+          "word": " This",
+          "start": 23.76,
+          "end": 23.98,
+          "probability": 0.9967227578163147
+        },
+        {
+          "word": " is",
+          "start": 23.98,
+          "end": 24.16,
+          "probability": 0.9990756511688232
+        },
+        {
+          "word": " where",
+          "start": 24.16,
+          "end": 24.34,
+          "probability": 0.9977362155914307
+        },
+        {
+          "word": " we'll",
+          "start": 24.34,
+          "end": 24.54,
+          "probability": 0.9948574006557465
+        },
+        {
+          "word": " talk",
+          "start": 24.54,
+          "end": 24.76,
+          "probability": 0.9994128942489624
+        },
+        {
+          "word": " about",
+          "start": 24.76,
+          "end": 25.14,
+          "probability": 0.9995629191398621
+        },
+        {
+          "word": " why",
+          "start": 25.14,
+          "end": 25.52,
+          "probability": 0.9835988283157349
+        },
+        {
+          "word": " Infinite",
+          "start": 25.52,
+          "end": 25.86,
+          "probability": 0.915328860282898
+        },
+        {
+          "word": " Talk",
+          "start": 25.86,
+          "end": 26.16,
+          "probability": 0.9900938868522644
+        },
+        {
+          "word": " exists",
+          "start": 26.16,
+          "end": 26.54,
+          "probability": 0.9450557827949524
+        },
+        {
+          "word": " in",
+          "start": 26.54,
+          "end": 26.7,
+          "probability": 0.9972358345985413
+        },
+        {
+          "word": " the",
+          "start": 26.7,
+          "end": 26.82,
+          "probability": 0.9970254302024841
+        },
+        {
+          "word": " first",
+          "start": 26.82,
+          "end": 27.08,
+          "probability": 0.9960492253303528
+        },
+        {
+          "word": " place,",
+          "start": 27.08,
+          "end": 27.52,
+          "probability": 0.9986543655395508
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "start": 27.52,
+      "end": 30.06,
+      "text": "the frustration with current dubbing systems",
+      "words": [
+        {
+          "word": " the",
+          "start": 27.52,
+          "end": 27.98,
+          "probability": 0.664229691028595
+        },
+        {
+          "word": " frustration",
+          "start": 27.98,
+          "end": 28.52,
+          "probability": 0.9924975037574768
+        },
+        {
+          "word": " with",
+          "start": 28.52,
+          "end": 28.94,
+          "probability": 0.9972506165504456
+        },
+        {
+          "word": " current",
+          "start": 28.94,
+          "end": 29.22,
+          "probability": 0.9964757561683655
+        },
+        {
+          "word": " dubbing",
+          "start": 29.22,
+          "end": 29.54,
+          "probability": 0.9613576829433441
+        },
+        {
+          "word": " systems",
+          "start": 29.54,
+          "end": 30.06,
+          "probability": 0.9917764663696289
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "start": 30.06,
+      "end": 34.38,
+      "text": "and how we're trying to make digital conversations actually feel alive.",
+      "words": [
+        {
+          "word": " and",
+          "start": 30.06,
+          "end": 30.48,
+          "probability": 0.6427164673805237
+        },
+        {
+          "word": " how",
+          "start": 30.48,
+          "end": 30.74,
+          "probability": 0.9976105690002441
+        },
+        {
+          "word": " we're",
+          "start": 30.74,
+          "end": 30.98,
+          "probability": 0.9680398404598236
+        },
+        {
+          "word": " trying",
+          "start": 30.98,
+          "end": 31.26,
+          "probability": 0.9969845414161682
+        },
+        {
+          "word": " to",
+          "start": 31.26,
+          "end": 31.36,
+          "probability": 0.9981604218482971
+        },
+        {
+          "word": " make",
+          "start": 31.36,
+          "end": 31.58,
+          "probability": 0.9989474415779114
+        },
+        {
+          "word": " digital",
+          "start": 31.58,
+          "end": 31.96,
+          "probability": 0.9964011907577515
+        },
+        {
+          "word": " conversations",
+          "start": 31.96,
+          "end": 32.7,
+          "probability": 0.9944887161254883
+        },
+        {
+          "word": " actually",
+          "start": 32.7,
+          "end": 33.34,
+          "probability": 0.9831793308258057
+        },
+        {
+          "word": " feel",
+          "start": 33.34,
+          "end": 33.74,
+          "probability": 0.9984239339828491
+        },
+        {
+          "word": " alive.",
+          "start": 33.74,
+          "end": 34.38,
+          "probability": 0.998838484287262
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "start": 35.12,
+      "end": 38.54,
+      "text": "Exactly, it's our why, the human side of all this tech,",
+      "words": [
+        {
+          "word": " Exactly,",
+          "start": 35.12,
+          "end": 35.24,
+          "probability": 0.8005059957504272
+        },
+        {
+          "word": " it's",
+          "start": 35.54,
+          "end": 35.84,
+          "probability": 0.9885321855545044
+        },
+        {
+          "word": " our",
+          "start": 35.84,
+          "end": 36.1,
+          "probability": 0.6298561692237854
+        },
+        {
+          "word": " why,",
+          "start": 36.1,
+          "end": 36.52,
+          "probability": 0.9125356674194336
+        },
+        {
+          "word": " the",
+          "start": 36.78,
+          "end": 36.96,
+          "probability": 0.9780128598213196
+        },
+        {
+          "word": " human",
+          "start": 36.96,
+          "end": 37.22,
+          "probability": 0.9905842542648315
+        },
+        {
+          "word": " side",
+          "start": 37.22,
+          "end": 37.54,
+          "probability": 0.9962890148162842
+        },
+        {
+          "word": " of",
+          "start": 37.54,
+          "end": 37.72,
+          "probability": 0.997528612613678
+        },
+        {
+          "word": " all",
+          "start": 37.72,
+          "end": 37.9,
+          "probability": 0.9743905067443848
+        },
+        {
+          "word": " this",
+          "start": 37.9,
+          "end": 38.16,
+          "probability": 0.9913293123245239
+        },
+        {
+          "word": " tech,",
+          "start": 38.16,
+          "end": 38.54,
+          "probability": 0.9924638271331787
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "start": 39.02,
+      "end": 41.8,
+      "text": "emotion, connection, and the spark behind the idea.",
+      "words": [
+        {
+          "word": " emotion,",
+          "start": 39.02,
+          "end": 39.3,
+          "probability": 0.9712807536125183
+        },
+        {
+          "word": " connection,",
+          "start": 39.62,
+          "end": 40.0,
+          "probability": 0.9970353841781616
+        },
+        {
+          "word": " and",
+          "start": 40.28,
+          "end": 40.48,
+          "probability": 0.9958314299583435
+        },
+        {
+          "word": " the",
+          "start": 40.48,
+          "end": 40.72,
+          "probability": 0.9971255660057068
+        },
+        {
+          "word": " spark",
+          "start": 40.72,
+          "end": 40.96,
+          "probability": 0.9882251024246216
+        },
+        {
+          "word": " behind",
+          "start": 40.96,
+          "end": 41.32,
+          "probability": 0.9973526000976562
+        },
+        {
+          "word": " the",
+          "start": 41.32,
+          "end": 41.52,
+          "probability": 0.9950365424156189
+        },
+        {
+          "word": " idea.",
+          "start": 41.52,
+          "end": 41.8,
+          "probability": 0.9977530837059021
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "start": 42.36,
+      "end": 44.6,
+      "text": "Moving on to section 2, methodology.",
+      "words": [
+        {
+          "word": " Moving",
+          "start": 42.36,
+          "end": 42.48,
+          "probability": 0.9835416674613953
+        },
+        {
+          "word": " on",
+          "start": 42.48,
+          "end": 42.78,
+          "probability": 0.8734986186027527
+        },
+        {
+          "word": " to",
+          "start": 42.78,
+          "end": 43.02,
+          "probability": 0.9990560412406921
+        },
+        {
+          "word": " section",
+          "start": 43.02,
+          "end": 43.34,
+          "probability": 0.72051602602005
+        },
+        {
+          "word": " 2,",
+          "start": 43.34,
+          "end": 43.92,
+          "probability": 0.3961433172225952
+        },
+        {
+          "word": " methodology.",
+          "start": 44.6,
+          "end": 44.6,
+          "probability": 0.9055307507514954
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "start": 45.28,
+      "end": 47.34,
+      "text": "That's where things get a bit more technical.",
+      "words": [
+        {
+          "word": " That's",
+          "start": 45.28,
+          "end": 45.72,
+          "probability": 0.9968089163303375
+        },
+        {
+          "word": " where",
+          "start": 45.72,
+          "end": 45.72,
+          "probability": 0.9908344745635986
+        },
+        {
+          "word": " things",
+          "start": 45.72,
+          "end": 45.94,
+          "probability": 0.9972823858261108
+        },
+        {
+          "word": " get",
+          "start": 45.94,
+          "end": 46.34,
+          "probability": 0.9988046884536743
+        },
+        {
+          "word": " a",
+          "start": 46.34,
+          "end": 46.42,
+          "probability": 0.9851382970809937
+        },
+        {
+          "word": " bit",
+          "start": 46.42,
+          "end": 46.7,
+          "probability": 0.9966891407966614
+        },
+        {
+          "word": " more",
+          "start": 46.7,
+          "end": 46.96,
+          "probability": 0.9990516304969788
+        },
+        {
+          "word": " technical.",
+          "start": 46.96,
+          "end": 47.34,
+          "probability": 0.9995583891868591
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "start": 47.92,
+      "end": 52.3,
+      "text": "We'll explain how the system listens, learns, and mirror speech patterns",
+      "words": [
+        {
+          "word": " We'll",
+          "start": 47.92,
+          "end": 48.2,
+          "probability": 0.962129145860672
+        },
+        {
+          "word": " explain",
+          "start": 48.2,
+          "end": 48.56,
+          "probability": 0.9993688464164734
+        },
+        {
+          "word": " how",
+          "start": 48.56,
+          "end": 48.86,
+          "probability": 0.9973666071891785
+        },
+        {
+          "word": " the",
+          "start": 48.86,
+          "end": 49.14,
+          "probability": 0.9936074018478394
+        },
+        {
+          "word": " system",
+          "start": 49.14,
+          "end": 49.44,
+          "probability": 0.9920510649681091
+        },
+        {
+          "word": " listens,",
+          "start": 49.44,
+          "end": 50.0,
+          "probability": 0.9728095531463623
+        },
+        {
+          "word": " learns,",
+          "start": 50.3,
+          "end": 50.72,
+          "probability": 0.9992289543151855
+        },
+        {
+          "word": " and",
+          "start": 51.0,
+          "end": 51.24,
+          "probability": 0.999160647392273
+        },
+        {
+          "word": " mirror",
+          "start": 51.24,
+          "end": 51.52,
+          "probability": 0.9069360494613647
+        },
+        {
+          "word": " speech",
+          "start": 51.52,
+          "end": 51.98,
+          "probability": 0.9767974019050598
+        },
+        {
+          "word": " patterns",
+          "start": 51.98,
+          "end": 52.3,
+          "probability": 0.9982615113258362
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "start": 52.3,
+      "end": 54.18,
+      "text": "the brain of Infinite Talk.",
+      "words": [
+        {
+          "word": " the",
+          "start": 52.3,
+          "end": 52.88,
+          "probability": 0.2965938448905945
+        },
+        {
+          "word": " brain",
+          "start": 52.88,
+          "end": 53.2,
+          "probability": 0.9940792322158813
+        },
+        {
+          "word": " of",
+          "start": 53.2,
+          "end": 53.48,
+          "probability": 0.999068558216095
+        },
+        {
+          "word": " Infinite",
+          "start": 53.48,
+          "end": 53.78,
+          "probability": 0.16681547462940216
+        },
+        {
+          "word": " Talk.",
+          "start": 53.78,
+          "end": 54.18,
+          "probability": 0.9217120409011841
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "start": 54.4,
+      "end": 56.1,
+      "text": "And don't worry, we'll keep it simple.",
+      "words": [
+        {
+          "word": " And",
+          "start": 54.4,
+          "end": 54.68,
+          "probability": 0.9746442437171936
+        },
+        {
+          "word": " don't",
+          "start": 54.68,
+          "end": 54.94,
+          "probability": 0.9874697625637054
+        },
+        {
+          "word": " worry,",
+          "start": 54.94,
+          "end": 55.18,
+          "probability": 0.9998167157173157
+        },
+        {
+          "word": " we'll",
+          "start": 55.32,
+          "end": 55.52,
+          "probability": 0.9947417080402374
+        },
+        {
+          "word": " keep",
+          "start": 55.52,
+          "end": 55.68,
+          "probability": 0.9989053010940552
+        },
+        {
+          "word": " it",
+          "start": 55.68,
+          "end": 55.88,
+          "probability": 0.9997543692588806
+        },
+        {
+          "word": " simple.",
+          "start": 55.88,
+          "end": 56.1,
+          "probability": 0.999631404876709
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "start": 56.1,
+      "end": 57.48,
+      "text": "It's not about math.",
+      "words": [
+        {
+          "word": " It's",
+          "start": 56.1,
+          "end": 56.68,
+          "probability": 0.7202188670635223
+        },
+        {
+          "word": " not",
+          "start": 56.68,
+          "end": 56.88,
+          "probability": 0.9909979104995728
+        },
+        {
+          "word": " about",
+          "start": 56.88,
+          "end": 57.16,
+          "probability": 0.9925013780593872
+        },
+        {
+          "word": " math.",
+          "start": 57.16,
+          "end": 57.48,
+          "probability": 0.980453610420227
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "start": 57.76,
+      "end": 60.64,
+      "text": "It's about understanding how voice can shape emotion",
+      "words": [
+        {
+          "word": " It's",
+          "start": 57.76,
+          "end": 57.88,
+          "probability": 0.9953703880310059
+        },
+        {
+          "word": " about",
+          "start": 57.88,
+          "end": 58.16,
+          "probability": 0.9965331554412842
+        },
+        {
+          "word": " understanding",
+          "start": 58.16,
+          "end": 58.7,
+          "probability": 0.9965599179267883
+        },
+        {
+          "word": " how",
+          "start": 58.7,
+          "end": 59.18,
+          "probability": 0.9975733160972595
+        },
+        {
+          "word": " voice",
+          "start": 59.18,
+          "end": 59.5,
+          "probability": 0.9905884265899658
+        },
+        {
+          "word": " can",
+          "start": 59.5,
+          "end": 59.88,
+          "probability": 0.9990857839584351
+        },
+        {
+          "word": " shape",
+          "start": 59.88,
+          "end": 60.16,
+          "probability": 0.9910091161727905
+        },
+        {
+          "word": " emotion",
+          "start": 60.16,
+          "end": 60.64,
+          "probability": 0.9592881202697754
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "start": 60.64,
+      "end": 62.7,
+      "text": "and why that matters for storytelling.",
+      "words": [
+        {
+          "word": " and",
+          "start": 60.64,
+          "end": 61.18,
+          "probability": 0.6466941833496094
+        },
+        {
+          "word": " why",
+          "start": 61.18,
+          "end": 61.4,
+          "probability": 0.9912546873092651
+        },
+        {
+          "word": " that",
+          "start": 61.4,
+          "end": 61.62,
+          "probability": 0.9979795813560486
+        },
+        {
+          "word": " matters",
+          "start": 61.62,
+          "end": 61.92,
+          "probability": 0.9870522618293762
+        },
+        {
+          "word": " for",
+          "start": 61.92,
+          "end": 62.22,
+          "probability": 0.998117208480835
+        },
+        {
+          "word": " storytelling.",
+          "start": 62.22,
+          "end": 62.7,
+          "probability": 0.9761417508125305
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "start": 63.36,
+      "end": 65.34,
+      "text": "Then come section 3, architecture.",
+      "words": [
+        {
+          "word": " Then",
+          "start": 63.36,
+          "end": 63.4,
+          "probability": 0.7999188303947449
+        },
+        {
+          "word": " come",
+          "start": 63.4,
+          "end": 63.82,
+          "probability": 0.43595609068870544
+        },
+        {
+          "word": " section",
+          "start": 63.82,
+          "end": 64.16,
+          "probability": 0.6820567846298218
+        },
+        {
+          "word": " 3,",
+          "start": 64.16,
+          "end": 64.74,
+          "probability": 0.5883920192718506
+        },
+        {
+          "word": " architecture.",
+          "start": 65.34,
+          "end": 65.34,
+          "probability": 0.6800834536552429
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "start": 66.08,
+      "end": 68.02,
+      "text": "This is the behind the scenes episode.",
+      "words": [
+        {
+          "word": " This",
+          "start": 66.08,
+          "end": 66.2,
+          "probability": 0.994371771812439
+        },
+        {
+          "word": " is",
+          "start": 66.2,
+          "end": 66.38,
+          "probability": 0.9950507283210754
+        },
+        {
+          "word": " the",
+          "start": 66.38,
+          "end": 66.6,
+          "probability": 0.8594672083854675
+        },
+        {
+          "word": " behind",
+          "start": 66.6,
+          "end": 66.88,
+          "probability": 0.4302482604980469
+        },
+        {
+          "word": " the",
+          "start": 66.88,
+          "end": 67.18,
+          "probability": 0.5444843769073486
+        },
+        {
+          "word": " scenes",
+          "start": 67.18,
+          "end": 67.42,
+          "probability": 0.9846283197402954
+        },
+        {
+          "word": " episode.",
+          "start": 67.42,
+          "end": 68.02,
+          "probability": 0.9946643114089966
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "start": 68.42,
+      "end": 73.18,
+      "text": "We'll unpack how the pipeline flows, from raw audio to expressive animation",
+      "words": [
+        {
+          "word": " We'll",
+          "start": 68.42,
+          "end": 68.78,
+          "probability": 0.9165405631065369
+        },
+        {
+          "word": " unpack",
+          "start": 68.78,
+          "end": 69.06,
+          "probability": 0.9725300371646881
+        },
+        {
+          "word": " how",
+          "start": 69.06,
+          "end": 69.3,
+          "probability": 0.9810208082199097
+        },
+        {
+          "word": " the",
+          "start": 69.3,
+          "end": 69.48,
+          "probability": 0.9942124485969543
+        },
+        {
+          "word": " pipeline",
+          "start": 69.48,
+          "end": 69.82,
+          "probability": 0.9616205096244812
+        },
+        {
+          "word": " flows,",
+          "start": 69.82,
+          "end": 70.38,
+          "probability": 0.99856036901474
+        },
+        {
+          "word": " from",
+          "start": 70.66,
+          "end": 70.92,
+          "probability": 0.996229350566864
+        },
+        {
+          "word": " raw",
+          "start": 70.92,
+          "end": 71.26,
+          "probability": 0.9948927164077759
+        },
+        {
+          "word": " audio",
+          "start": 71.26,
+          "end": 71.74,
+          "probability": 0.9944760203361511
+        },
+        {
+          "word": " to",
+          "start": 71.74,
+          "end": 72.16,
+          "probability": 0.8868278861045837
+        },
+        {
+          "word": " expressive",
+          "start": 72.16,
+          "end": 72.62,
+          "probability": 0.9810305833816528
+        },
+        {
+          "word": " animation",
+          "start": 72.62,
+          "end": 73.18,
+          "probability": 0.9954692125320435
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "start": 73.18,
+      "end": 75.78,
+      "text": "and how each layer builds on the next.",
+      "words": [
+        {
+          "word": " and",
+          "start": 73.18,
+          "end": 73.68,
+          "probability": 0.543514609336853
+        },
+        {
+          "word": " how",
+          "start": 73.68,
+          "end": 73.98,
+          "probability": 0.9988111257553101
+        },
+        {
+          "word": " each",
+          "start": 73.98,
+          "end": 74.36,
+          "probability": 0.9990087747573853
+        },
+        {
+          "word": " layer",
+          "start": 74.36,
+          "end": 74.66,
+          "probability": 0.9958121180534363
+        },
+        {
+          "word": " builds",
+          "start": 74.66,
+          "end": 75.04,
+          "probability": 0.9980159997940063
+        },
+        {
+          "word": " on",
+          "start": 75.04,
+          "end": 75.24,
+          "probability": 0.9966101050376892
+        },
+        {
+          "word": " the",
+          "start": 75.24,
+          "end": 75.4,
+          "probability": 0.9975696206092834
+        },
+        {
+          "word": " next.",
+          "start": 75.4,
+          "end": 75.78,
+          "probability": 0.9962303042411804
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "start": 76.04,
+      "end": 78.08,
+      "text": "Yeah, that's the how it all works episode.",
+      "words": [
+        {
+          "word": " Yeah,",
+          "start": 76.04,
+          "end": 76.38,
+          "probability": 0.938401997089386
+        },
+        {
+          "word": " that's",
+          "start": 76.4,
+          "end": 76.7,
+          "probability": 0.9954058825969696
+        },
+        {
+          "word": " the",
+          "start": 76.7,
+          "end": 77.0,
+          "probability": 0.9325839877128601
+        },
+        {
+          "word": " how",
+          "start": 77.0,
+          "end": 77.18,
+          "probability": 0.5006886720657349
+        },
+        {
+          "word": " it",
+          "start": 77.18,
+          "end": 77.26,
+          "probability": 0.8781249523162842
+        },
+        {
+          "word": " all",
+          "start": 77.26,
+          "end": 77.46,
+          "probability": 0.99722820520401
+        },
+        {
+          "word": " works",
+          "start": 77.46,
+          "end": 77.7,
+          "probability": 0.997142493724823
+        },
+        {
+          "word": " episode.",
+          "start": 77.7,
+          "end": 78.08,
+          "probability": 0.9608479142189026
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "start": 78.44,
+      "end": 82.08,
+      "text": "You'll get a sense of how each piece of the system keeps everything in sync.",
+      "words": [
+        {
+          "word": " You'll",
+          "start": 78.44,
+          "end": 78.62,
+          "probability": 0.9962429404258728
+        },
+        {
+          "word": " get",
+          "start": 78.62,
+          "end": 78.8,
+          "probability": 0.9993889331817627
+        },
+        {
+          "word": " a",
+          "start": 78.8,
+          "end": 78.92,
+          "probability": 0.9988328814506531
+        },
+        {
+          "word": " sense",
+          "start": 78.92,
+          "end": 79.16,
+          "probability": 0.9990665316581726
+        },
+        {
+          "word": " of",
+          "start": 79.16,
+          "end": 79.38,
+          "probability": 0.9981275200843811
+        },
+        {
+          "word": " how",
+          "start": 79.38,
+          "end": 79.62,
+          "probability": 0.9987823367118835
+        },
+        {
+          "word": " each",
+          "start": 79.62,
+          "end": 79.84,
+          "probability": 0.9988818764686584
+        },
+        {
+          "word": " piece",
+          "start": 79.84,
+          "end": 80.1,
+          "probability": 0.9987768530845642
+        },
+        {
+          "word": " of",
+          "start": 80.1,
+          "end": 80.22,
+          "probability": 0.9991090893745422
+        },
+        {
+          "word": " the",
+          "start": 80.22,
+          "end": 80.42,
+          "probability": 0.9968672394752502
+        },
+        {
+          "word": " system",
+          "start": 80.42,
+          "end": 80.74,
+          "probability": 0.9986292123794556
+        },
+        {
+          "word": " keeps",
+          "start": 80.74,
+          "end": 81.12,
+          "probability": 0.9932686686515808
+        },
+        {
+          "word": " everything",
+          "start": 81.12,
+          "end": 81.56,
+          "probability": 0.9990888833999634
+        },
+        {
+          "word": " in",
+          "start": 81.56,
+          "end": 81.82,
+          "probability": 0.9953166246414185
+        },
+        {
+          "word": " sync.",
+          "start": 81.82,
+          "end": 82.08,
+          "probability": 0.9891499876976013
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "start": 82.3,
+      "end": 84.96,
+      "text": "After that, section 4, experiments.",
+      "words": [
+        {
+          "word": " After",
+          "start": 82.3,
+          "end": 82.66,
+          "probability": 0.9948128461837769
+        },
+        {
+          "word": " that,",
+          "start": 82.66,
+          "end": 83.24,
+          "probability": 0.9992941617965698
+        },
+        {
+          "word": " section",
+          "start": 83.64,
+          "end": 83.64,
+          "probability": 0.9718262553215027
+        },
+        {
+          "word": " 4,",
+          "start": 83.64,
+          "end": 84.2,
+          "probability": 0.8742783665657043
+        },
+        {
+          "word": " experiments.",
+          "start": 84.4,
+          "end": 84.96,
+          "probability": 0.9033357501029968
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "start": 84.96,
+      "end": 87.06,
+      "text": "Probably my favorite part.",
+      "words": [
+        {
+          "word": " Probably",
+          "start": 84.96,
+          "end": 85.72,
+          "probability": 0.2758433222770691
+        },
+        {
+          "word": " my",
+          "start": 85.72,
+          "end": 86.26,
+          "probability": 0.9714607000350952
+        },
+        {
+          "word": " favorite",
+          "start": 86.26,
+          "end": 86.56,
+          "probability": 0.9238135814666748
+        },
+        {
+          "word": " part.",
+          "start": 86.56,
+          "end": 87.06,
+          "probability": 0.9990065693855286
+        }
+      ]
+    },
+    {
+      "id": 29,
+      "start": 87.4,
+      "end": 89.32,
+      "text": "We'll share what worked, what failed,",
+      "words": [
+        {
+          "word": " We'll",
+          "start": 87.4,
+          "end": 87.6,
+          "probability": 0.9030185639858246
+        },
+        {
+          "word": " share",
+          "start": 87.6,
+          "end": 87.86,
+          "probability": 0.9952542781829834
+        },
+        {
+          "word": " what",
+          "start": 87.86,
+          "end": 88.12,
+          "probability": 0.9969673752784729
+        },
+        {
+          "word": " worked,",
+          "start": 88.12,
+          "end": 88.52,
+          "probability": 0.9901156425476074
+        },
+        {
+          "word": " what",
+          "start": 88.68,
+          "end": 88.94,
+          "probability": 0.9973782300949097
+        },
+        {
+          "word": " failed,",
+          "start": 88.94,
+          "end": 89.32,
+          "probability": 0.9977453351020813
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "start": 89.48,
+      "end": 93.3,
+      "text": "and how we tested Infinite Talk across different voices and languages.",
+      "words": [
+        {
+          "word": " and",
+          "start": 89.48,
+          "end": 89.7,
+          "probability": 0.9984750151634216
+        },
+        {
+          "word": " how",
+          "start": 89.7,
+          "end": 89.9,
+          "probability": 0.9993420243263245
+        },
+        {
+          "word": " we",
+          "start": 89.9,
+          "end": 90.08,
+          "probability": 0.997859537601471
+        },
+        {
+          "word": " tested",
+          "start": 90.08,
+          "end": 90.48,
+          "probability": 0.9352238178253174
+        },
+        {
+          "word": " Infinite",
+          "start": 90.48,
+          "end": 90.84,
+          "probability": 0.16360659897327423
+        },
+        {
+          "word": " Talk",
+          "start": 90.84,
+          "end": 91.14,
+          "probability": 0.9213507175445557
+        },
+        {
+          "word": " across",
+          "start": 91.14,
+          "end": 91.56,
+          "probability": 0.9884632229804993
+        },
+        {
+          "word": " different",
+          "start": 91.56,
+          "end": 91.94,
+          "probability": 0.9962949156761169
+        },
+        {
+          "word": " voices",
+          "start": 91.94,
+          "end": 92.4,
+          "probability": 0.9856479167938232
+        },
+        {
+          "word": " and",
+          "start": 92.4,
+          "end": 92.7,
+          "probability": 0.9951287508010864
+        },
+        {
+          "word": " languages.",
+          "start": 92.7,
+          "end": 93.3,
+          "probability": 0.9974225759506226
+        }
+      ]
+    },
+    {
+      "id": 31,
+      "start": 93.78,
+      "end": 95.42,
+      "text": "That's where the real discoveries happen.",
+      "words": [
+        {
+          "word": " That's",
+          "start": 93.78,
+          "end": 93.98,
+          "probability": 0.9357903301715851
+        },
+        {
+          "word": " where",
+          "start": 93.98,
+          "end": 94.14,
+          "probability": 0.9959492683410645
+        },
+        {
+          "word": " the",
+          "start": 94.14,
+          "end": 94.38,
+          "probability": 0.9779415726661682
+        },
+        {
+          "word": " real",
+          "start": 94.38,
+          "end": 94.54,
+          "probability": 0.9656736254692078
+        },
+        {
+          "word": " discoveries",
+          "start": 94.54,
+          "end": 94.96,
+          "probability": 0.9969279170036316
+        },
+        {
+          "word": " happen.",
+          "start": 94.96,
+          "end": 95.42,
+          "probability": 0.9288164973258972
+        }
+      ]
+    },
+    {
+      "id": 32,
+      "start": 95.66,
+      "end": 100.26,
+      "text": "The unexpected results, the tweaks, the human errors that made the system smarter.",
+      "words": [
+        {
+          "word": " The",
+          "start": 95.66,
+          "end": 95.98,
+          "probability": 0.9941838383674622
+        },
+        {
+          "word": " unexpected",
+          "start": 95.98,
+          "end": 96.38,
+          "probability": 0.9832021594047546
+        },
+        {
+          "word": " results,",
+          "start": 96.38,
+          "end": 96.94,
+          "probability": 0.9957144856452942
+        },
+        {
+          "word": " the",
+          "start": 97.18,
+          "end": 97.42,
+          "probability": 0.9978476762771606
+        },
+        {
+          "word": " tweaks,",
+          "start": 97.42,
+          "end": 97.76,
+          "probability": 0.9836641550064087
+        },
+        {
+          "word": " the",
+          "start": 98.02,
+          "end": 98.28,
+          "probability": 0.9905924201011658
+        },
+        {
+          "word": " human",
+          "start": 98.28,
+          "end": 98.6,
+          "probability": 0.9979709982872009
+        },
+        {
+          "word": " errors",
+          "start": 98.6,
+          "end": 98.92,
+          "probability": 0.9738928079605103
+        },
+        {
+          "word": " that",
+          "start": 98.92,
+          "end": 99.2,
+          "probability": 0.991188645362854
+        },
+        {
+          "word": " made",
+          "start": 99.2,
+          "end": 99.4,
+          "probability": 0.9977705478668213
+        },
+        {
+          "word": " the",
+          "start": 99.4,
+          "end": 99.66,
+          "probability": 0.9966719150543213
+        },
+        {
+          "word": " system",
+          "start": 99.66,
+          "end": 99.88,
+          "probability": 0.9881979823112488
+        },
+        {
+          "word": " smarter.",
+          "start": 99.88,
+          "end": 100.26,
+          "probability": 0.9976563453674316
+        }
+      ]
+    },
+    {
+      "id": 33,
+      "start": 100.58,
+      "end": 102.6,
+      "text": "Then section 5, results.",
+      "words": [
+        {
+          "word": " Then",
+          "start": 100.58,
+          "end": 101.0,
+          "probability": 0.9842529892921448
+        },
+        {
+          "word": " section",
+          "start": 101.0,
+          "end": 101.42,
+          "probability": 0.39996376633644104
+        },
+        {
+          "word": " 5,",
+          "start": 101.42,
+          "end": 102.04,
+          "probability": 0.3577076196670532
+        },
+        {
+          "word": " results.",
+          "start": 102.22,
+          "end": 102.6,
+          "probability": 0.8980275392532349
+        }
+      ]
+    },
+    {
+      "id": 34,
+      "start": 103.1,
+      "end": 105.56,
+      "text": "We'll show the outcomes, not just numbers,",
+      "words": [
+        {
+          "word": " We'll",
+          "start": 103.1,
+          "end": 103.36,
+          "probability": 0.9873328804969788
+        },
+        {
+          "word": " show",
+          "start": 103.36,
+          "end": 103.62,
+          "probability": 0.9979965090751648
+        },
+        {
+          "word": " the",
+          "start": 103.62,
+          "end": 103.92,
+          "probability": 0.9986683130264282
+        },
+        {
+          "word": " outcomes,",
+          "start": 103.92,
+          "end": 104.34,
+          "probability": 0.988269567489624
+        },
+        {
+          "word": " not",
+          "start": 104.66,
+          "end": 104.92,
+          "probability": 0.999029278755188
+        },
+        {
+          "word": " just",
+          "start": 104.92,
+          "end": 105.18,
+          "probability": 0.9993281364440918
+        },
+        {
+          "word": " numbers,",
+          "start": 105.18,
+          "end": 105.56,
+          "probability": 0.9980733394622803
+        }
+      ]
+    },
+    {
+      "id": 35,
+      "start": 105.84,
+      "end": 109.02,
+      "text": "but the emotional fidelity and realism we achieved.",
+      "words": [
+        {
+          "word": " but",
+          "start": 105.84,
+          "end": 106.04,
+          "probability": 0.998675525188446
+        },
+        {
+          "word": " the",
+          "start": 106.04,
+          "end": 106.3,
+          "probability": 0.9990836381912231
+        },
+        {
+          "word": " emotional",
+          "start": 106.3,
+          "end": 106.8,
+          "probability": 0.9962441921234131
+        },
+        {
+          "word": " fidelity",
+          "start": 106.8,
+          "end": 107.32,
+          "probability": 0.987851083278656
+        },
+        {
+          "word": " and",
+          "start": 107.32,
+          "end": 107.74,
+          "probability": 0.9427061080932617
+        },
+        {
+          "word": " realism",
+          "start": 107.74,
+          "end": 108.12,
+          "probability": 0.984718918800354
+        },
+        {
+          "word": " we",
+          "start": 108.12,
+          "end": 108.48,
+          "probability": 0.9939138293266296
+        },
+        {
+          "word": " achieved.",
+          "start": 108.48,
+          "end": 109.02,
+          "probability": 0.991565465927124
+        }
+      ]
+    },
+    {
+      "id": 36,
+      "start": 109.42,
+      "end": 111.58,
+      "text": "Exactly, that's where it all comes together.",
+      "words": [
+        {
+          "word": " Exactly,",
+          "start": 109.42,
+          "end": 109.88,
+          "probability": 0.984208881855011
+        },
+        {
+          "word": " that's",
+          "start": 110.12,
+          "end": 110.52,
+          "probability": 0.9976473450660706
+        },
+        {
+          "word": " where",
+          "start": 110.52,
+          "end": 110.6,
+          "probability": 0.9968279004096985
+        },
+        {
+          "word": " it",
+          "start": 110.6,
+          "end": 110.78,
+          "probability": 0.9981824159622192
+        },
+        {
+          "word": " all",
+          "start": 110.78,
+          "end": 110.98,
+          "probability": 0.9976142644882202
+        },
+        {
+          "word": " comes",
+          "start": 110.98,
+          "end": 111.22,
+          "probability": 0.9971427321434021
+        },
+        {
+          "word": " together.",
+          "start": 111.22,
+          "end": 111.58,
+          "probability": 0.9996849298477173
+        }
+      ]
+    },
+    {
+      "id": 37,
+      "start": 112.0,
+      "end": 114.72,
+      "text": "Proof that voices and faces can finally speak",
+      "words": [
+        {
+          "word": " Proof",
+          "start": 112.0,
+          "end": 112.26,
+          "probability": 0.9572480916976929
+        },
+        {
+          "word": " that",
+          "start": 112.26,
+          "end": 112.52,
+          "probability": 0.9977869987487793
+        },
+        {
+          "word": " voices",
+          "start": 112.52,
+          "end": 112.92,
+          "probability": 0.9969134330749512
+        },
+        {
+          "word": " and",
+          "start": 112.92,
+          "end": 113.22,
+          "probability": 0.991917073726654
+        },
+        {
+          "word": " faces",
+          "start": 113.22,
+          "end": 113.64,
+          "probability": 0.99685138463974
+        },
+        {
+          "word": " can",
+          "start": 113.64,
+          "end": 114.1,
+          "probability": 0.9959970712661743
+        },
+        {
+          "word": " finally",
+          "start": 114.1,
+          "end": 114.32,
+          "probability": 0.9949079155921936
+        },
+        {
+          "word": " speak",
+          "start": 114.32,
+          "end": 114.72,
+          "probability": 0.9968845248222351
+        }
+      ]
+    },
+    {
+      "id": 38,
+      "start": 114.72,
+      "end": 115.74,
+      "text": "the same language.",
+      "words": [
+        {
+          "word": " the",
+          "start": 114.72,
+          "end": 114.98,
+          "probability": 0.6073606014251709
+        },
+        {
+          "word": " same",
+          "start": 114.98,
+          "end": 115.22,
+          "probability": 0.9960259199142456
+        },
+        {
+          "word": " language.",
+          "start": 115.22,
+          "end": 115.74,
+          "probability": 0.9972779154777527
+        }
+      ]
+    },
+    {
+      "id": 39,
+      "start": 116.18,
+      "end": 118.4,
+      "text": "And finally, section 6, conclusion.",
+      "words": [
+        {
+          "word": " And",
+          "start": 116.18,
+          "end": 116.22,
+          "probability": 0.8883213996887207
+        },
+        {
+          "word": " finally,",
+          "start": 116.22,
+          "end": 116.7,
+          "probability": 0.9793115258216858
+        },
+        {
+          "word": " section",
+          "start": 116.96,
+          "end": 117.2,
+          "probability": 0.38599371910095215
+        },
+        {
+          "word": " 6,",
+          "start": 117.2,
+          "end": 117.86,
+          "probability": 0.4683760404586792
+        },
+        {
+          "word": " conclusion.",
+          "start": 118.1,
+          "end": 118.4,
+          "probability": 0.8196457624435425
+        }
+      ]
+    },
+    {
+      "id": 40,
+      "start": 118.98,
+      "end": 120.88,
+      "text": "That's where we step back and reflect",
+      "words": [
+        {
+          "word": " That's",
+          "start": 118.98,
+          "end": 119.28,
+          "probability": 0.9923811256885529
+        },
+        {
+          "word": " where",
+          "start": 119.28,
+          "end": 119.38,
+          "probability": 0.9930857419967651
+        },
+        {
+          "word": " we",
+          "start": 119.38,
+          "end": 119.62,
+          "probability": 0.9970375299453735
+        },
+        {
+          "word": " step",
+          "start": 119.62,
+          "end": 119.86,
+          "probability": 0.9911752939224243
+        },
+        {
+          "word": " back",
+          "start": 119.86,
+          "end": 120.24,
+          "probability": 0.9988183379173279
+        },
+        {
+          "word": " and",
+          "start": 120.24,
+          "end": 120.4,
+          "probability": 0.9965744018554688
+        },
+        {
+          "word": " reflect",
+          "start": 120.4,
+          "end": 120.88,
+          "probability": 0.9982632994651794
+        }
+      ]
+    },
+    {
+      "id": 41,
+      "start": 120.88,
+      "end": 124.56,
+      "text": "what Infinite Talk means for creators and where we go next.",
+      "words": [
+        {
+          "word": " what",
+          "start": 120.88,
+          "end": 121.52,
+          "probability": 0.8005005717277527
+        },
+        {
+          "word": " Infinite",
+          "start": 121.52,
+          "end": 121.8,
+          "probability": 0.2240997850894928
+        },
+        {
+          "word": " Talk",
+          "start": 121.8,
+          "end": 122.12,
+          "probability": 0.9406885504722595
+        },
+        {
+          "word": " means",
+          "start": 122.12,
+          "end": 122.4,
+          "probability": 0.9928988218307495
+        },
+        {
+          "word": " for",
+          "start": 122.4,
+          "end": 122.7,
+          "probability": 0.9985347986221313
+        },
+        {
+          "word": " creators",
+          "start": 122.7,
+          "end": 123.08,
+          "probability": 0.9852983951568604
+        },
+        {
+          "word": " and",
+          "start": 123.08,
+          "end": 123.6,
+          "probability": 0.9023193120956421
+        },
+        {
+          "word": " where",
+          "start": 123.6,
+          "end": 123.76,
+          "probability": 0.9977033734321594
+        },
+        {
+          "word": " we",
+          "start": 123.76,
+          "end": 123.92,
+          "probability": 0.9977007508277893
+        },
+        {
+          "word": " go",
+          "start": 123.92,
+          "end": 124.1,
+          "probability": 0.9985067248344421
+        },
+        {
+          "word": " next.",
+          "start": 124.1,
+          "end": 124.56,
+          "probability": 0.9994924068450928
+        }
+      ]
+    },
+    {
+      "id": 42,
+      "start": 124.92,
+      "end": 125.7,
+      "text": "A calm landing.",
+      "words": [
+        {
+          "word": " A",
+          "start": 124.92,
+          "end": 125.08,
+          "probability": 0.937264084815979
+        },
+        {
+          "word": " calm",
+          "start": 125.08,
+          "end": 125.34,
+          "probability": 0.7468788623809814
+        },
+        {
+          "word": " landing.",
+          "start": 125.34,
+          "end": 125.7,
+          "probability": 0.9835824966430664
+        }
+      ]
+    },
+    {
+      "id": 43,
+      "start": 126.08,
+      "end": 128.9,
+      "text": "We'll talk about the future, not just of this project,",
+      "words": [
+        {
+          "word": " We'll",
+          "start": 126.08,
+          "end": 126.3,
+          "probability": 0.9921307861804962
+        },
+        {
+          "word": " talk",
+          "start": 126.3,
+          "end": 126.54,
+          "probability": 0.9987713694572449
+        },
+        {
+          "word": " about",
+          "start": 126.54,
+          "end": 126.78,
+          "probability": 0.9991180300712585
+        },
+        {
+          "word": " the",
+          "start": 126.78,
+          "end": 126.98,
+          "probability": 0.9967844486236572
+        },
+        {
+          "word": " future,",
+          "start": 126.98,
+          "end": 127.24,
+          "probability": 0.9989039897918701
+        },
+        {
+          "word": " not",
+          "start": 127.64,
+          "end": 127.88,
+          "probability": 0.9980701804161072
+        },
+        {
+          "word": " just",
+          "start": 127.88,
+          "end": 128.12,
+          "probability": 0.9995846152305603
+        },
+        {
+          "word": " of",
+          "start": 128.12,
+          "end": 128.26,
+          "probability": 0.9957326054573059
+        },
+        {
+          "word": " this",
+          "start": 128.26,
+          "end": 128.52,
+          "probability": 0.9982591271400452
+        },
+        {
+          "word": " project,",
+          "start": 128.52,
+          "end": 128.9,
+          "probability": 0.9971375465393066
+        }
+      ]
+    },
+    {
+      "id": 44,
+      "start": 129.02,
+      "end": 132.16,
+      "text": "but of how AI could change human communication altogether.",
+      "words": [
+        {
+          "word": " but",
+          "start": 129.02,
+          "end": 129.18,
+          "probability": 0.9985325336456299
+        },
+        {
+          "word": " of",
+          "start": 129.18,
+          "end": 129.36,
+          "probability": 0.9912893772125244
+        },
+        {
+          "word": " how",
+          "start": 129.36,
+          "end": 129.62,
+          "probability": 0.9990135431289673
+        },
+        {
+          "word": " AI",
+          "start": 129.62,
+          "end": 130.02,
+          "probability": 0.9615547060966492
+        },
+        {
+          "word": " could",
+          "start": 130.02,
+          "end": 130.34,
+          "probability": 0.9934073686599731
+        },
+        {
+          "word": " change",
+          "start": 130.34,
+          "end": 130.72,
+          "probability": 0.99859219789505
+        },
+        {
+          "word": " human",
+          "start": 130.72,
+          "end": 131.0,
+          "probability": 0.9978544116020203
+        },
+        {
+          "word": " communication",
+          "start": 131.0,
+          "end": 131.54,
+          "probability": 0.9985364675521851
+        },
+        {
+          "word": " altogether.",
+          "start": 131.54,
+          "end": 132.16,
+          "probability": 0.9510596990585327
+        }
+      ]
+    },
+    {
+      "id": 45,
+      "start": 132.8,
+      "end": 135.1,
+      "text": "So yeah, six sections, one vision.",
+      "words": [
+        {
+          "word": " So",
+          "start": 132.8,
+          "end": 132.88,
+          "probability": 0.9918692111968994
+        },
+        {
+          "word": " yeah,",
+          "start": 132.88,
+          "end": 133.26,
+          "probability": 0.8569070100784302
+        },
+        {
+          "word": " six",
+          "start": 133.56,
+          "end": 133.72,
+          "probability": 0.7964298129081726
+        },
+        {
+          "word": " sections,",
+          "start": 133.72,
+          "end": 134.2,
+          "probability": 0.9870627522468567
+        },
+        {
+          "word": " one",
+          "start": 134.54,
+          "end": 134.72,
+          "probability": 0.9964568018913269
+        },
+        {
+          "word": " vision.",
+          "start": 134.72,
+          "end": 135.1,
+          "probability": 0.9953072667121887
+        }
+      ]
+    },
+    {
+      "id": 46,
+      "start": 135.64,
+      "end": 136.9,
+      "text": "Welcome to Infinite Talk.",
+      "words": [
+        {
+          "word": " Welcome",
+          "start": 135.64,
+          "end": 135.76,
+          "probability": 0.9973739385604858
+        },
+        {
+          "word": " to",
+          "start": 135.76,
+          "end": 136.22,
+          "probability": 0.9993041753768921
+        },
+        {
+          "word": " Infinite",
+          "start": 136.22,
+          "end": 136.54,
+          "probability": 0.9579343199729919
+        },
+        {
+          "word": " Talk.",
+          "start": 136.54,
+          "end": 136.9,
+          "probability": 0.9927924871444702
+        }
+      ]
+    },
+    {
+      "id": 47,
+      "start": 137.12,
+      "end": 137.94,
+      "text": "Let's get started.",
+      "words": [
+        {
+          "word": " Let's",
+          "start": 137.12,
+          "end": 137.38,
+          "probability": 0.9947406351566315
+        },
+        {
+          "word": " get",
+          "start": 137.38,
+          "end": 137.7,
+          "probability": 0.9077452421188354
+        },
+        {
+          "word": " started.",
+          "start": 137.7,
+          "end": 137.94,
+          "probability": 0.9969057440757751
+        }
+      ]
+    }
+  ]
+}

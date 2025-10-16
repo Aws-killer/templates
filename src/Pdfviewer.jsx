@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useMemo } from "react";
 import {
   AbsoluteFill,
   interpolate,
@@ -9,6 +9,140 @@ import {
   spring,
   Audio,
 } from "remotion";
+
+// src/lib/transcript-helpers.js
+
+/**
+ * Normalizes a text string for comparison by converting to lowercase
+ * and removing common punctuation and hyphens.
+ * @param {string | undefined} text - The input string.
+ * @returns {string} The normalized string.
+ */
+const normalizeText = (text) => {
+  if (!text) return '';
+  return text.toLowerCase().replace(/[.,'"-]/g, '').trim();
+};
+
+/**
+ * Finds the best possible start and end timestamps for a quote within an
+ * imperfect transcript. It scores potential matches word-by-word to find
+ * the most likely range and accounts for narrator cues like "quote" and "end quote".
+ *
+ * @param {object} transcript - The full transcript object from your JSON file.
+ * @param {string} quoteText - The text of the quote to find.
+ * @param {number} [matchThreshold=0.7] - The minimum percentage of words that must match (0.0 to 1.0).
+ * @returns {{
+ *   highlightStartTime: number,
+ *   highlightEndTime: number,
+ *   narrationStartTime: number,
+ *   narrationEndTime: number,
+ *   duration: number,
+ *   score: number,
+ *   found: boolean
+ * }} An object with detailed timing info.
+ */
+export const findQuoteTimings = (transcript, quoteText, matchThreshold = 0.7) => {
+  // 1. PREPARATION
+  const normalizedQuote = normalizeText(quoteText);
+  const quoteWords = normalizedQuote.split(/\s+/).filter(Boolean);
+
+  const defaultReturn = {
+    highlightStartTime: 0, highlightEndTime: 0,
+    narrationStartTime: 0, narrationEndTime: 0,
+    duration: 0, score: 0, found: false,
+  };
+
+  if (!transcript?.segments || quoteWords.length === 0) {
+    return defaultReturn;
+  }
+
+  const allWords = transcript.segments.flatMap((segment) => segment.words);
+  let bestMatch = { ...defaultReturn };
+
+  // 2. SEARCH FOR THE BEST MATCH
+  // Iterate through every word in the transcript as a potential starting point.
+  for (let i = 0; i < allWords.length; i++) {
+    // We don't need to check windows that are too short to contain the quote.
+    if (i + quoteWords.length > allWords.length) break;
+
+    let matches = 0;
+    let lastMatchIndex = -1;
+
+    // From this starting point `i`, compare word-by-word against the quote.
+    for (let j = 0; j < quoteWords.length; j++) {
+      const transcriptWord = normalizeText(allWords[i + j]?.word);
+      const quoteWord = quoteWords[j];
+      if (transcriptWord === quoteWord) {
+        matches++;
+        lastMatchIndex = i + j; // Keep track of the last successfully matched word's index
+      }
+    }
+
+    const currentScore = matches / quoteWords.length;
+
+    // If this match is better than our previous best, store its details.
+    if (currentScore > bestMatch.score) {
+      bestMatch = {
+        ...bestMatch,
+        score: currentScore,
+        startIndex: i,
+        endIndex: lastMatchIndex,
+      };
+    }
+  }
+
+  // 3. FINALIZE TIMINGS IF A GOOD MATCH WAS FOUND
+  if (bestMatch.score >= matchThreshold) {
+    const { startIndex, endIndex } = bestMatch;
+
+    // a. Determine Highlight Timings (for the marker animation)
+    // These should correspond to the *actual words* of the quote.
+    const highlightStartTime = allWords[startIndex].start;
+    const highlightEndTime = allWords[endIndex].end;
+
+    // b. Determine Narration Timings (for the modal visibility)
+    // Check for "quote" before the start and "end quote" after the end.
+    let narrationStartTime = highlightStartTime;
+    const wordBefore = allWords[startIndex - 1];
+    if (wordBefore && normalizeText(wordBefore.word) === 'quote') {
+      narrationStartTime = wordBefore.start;
+    }
+
+    let narrationEndTime = highlightEndTime;
+    const wordAfter1 = allWords[endIndex + 1];
+    const wordAfter2 = allWords[endIndex + 2];
+    if (
+      wordAfter1 && wordAfter2 &&
+      normalizeText(wordAfter1.word) === 'end' &&
+      normalizeText(wordAfter2.word) === 'quote'
+    ) {
+      narrationEndTime = wordAfter2.end;
+    }
+    console.log({      highlightStartTime,
+      highlightEndTime,
+      narrationStartTime,
+      narrationEndTime,
+      duration: narrationEndTime - narrationStartTime,
+      score: bestMatch.score,
+      found: true,})
+    return {
+      highlightStartTime,
+      highlightEndTime,
+      narrationStartTime,
+      narrationEndTime,
+      duration: narrationEndTime - narrationStartTime,
+      score: bestMatch.score,
+      found: true,
+    };
+  }
+
+  // If no match met the threshold
+  console.warn(`Quote not found in transcript with score >= ${matchThreshold}: "${quoteText}" (Best score: ${bestMatch.score.toFixed(2)})`);
+  return defaultReturn;
+};
+
+// --- Your other sub-components (PaperTitleCard, MarkerHighlight, MatchModal) remain the same ---
+// ... (paste the code for PaperTitleCard, MarkerHighlight, and MatchModal here)
 
 /* -------------------------------------------------------------------------- */
 /* 🧩 UTILITIES */
@@ -60,13 +194,7 @@ const PaperTitleCard = ({ title, visible, startFrame }) => {
 /* 🧱 COMPONENT: MarkerHighlight */
 /* -------------------------------------------------------------------------- */
 
-const MarkerHighlight = ({
-  bbox,
-  pageHeight,
-  startFrame,
-  scale = 2.5,
-  highlightDuration = 34,
-}) => {
+const MarkerHighlight = ({ bbox, pageHeight, startFrame,scale=2.5, highlightDuration = 34 }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
 
@@ -78,7 +206,9 @@ const MarkerHighlight = ({
     config: { damping: 100, stiffness: 150 },
     durationInFrames: highlightDuration,
   });
-
+  
+  // This works because the SVG viewBox matches the PDF's native coordinate system,
+  // and your bbox data uses a top-left origin, just like SVG.
   const y = (pageHeight - bbox.y - bbox.height) * scale;
   const x = bbox.x * scale;
   const width = bbox.width * scale;
@@ -101,7 +231,6 @@ const MarkerHighlight = ({
     />
   );
 };
-
 /* -------------------------------------------------------------------------- */
 /* 🧱 COMPONENT: MatchModal */
 /* -------------------------------------------------------------------------- */
@@ -171,8 +300,8 @@ const MatchModal = ({ match, matchNumber, startFrame, duration = 120 }) => {
 /* -------------------------------------------------------------------------- */
 /* 🎬 MAIN SCENE: AudioSyncedScene */
 /* -------------------------------------------------------------------------- */
-
 export const AudioSyncedScene = ({
+  transcript, // 👈 Pass in the full transcript
   match,
   matchNumber,
   pageWidth = 612,
@@ -180,24 +309,36 @@ export const AudioSyncedScene = ({
   pageImageFile,
   audioFile,
   paperTitle,
-  quoteStartTime,
   zoomTo = 1.5,
 }) => {
   const frame = useCurrentFrame();
   const { fps, width: videoWidth, height: videoHeight } = useVideoConfig();
   const scale = 0.85;
 
+  // 👇 Use the helper to get dynamic timings for the specific quote
+  const quoteTimings = useMemo(
+    () => findQuoteTimings(transcript, match.text),
+    [transcript, match.text]
+  );
+
+  // 👇 Use the new, more descriptive timing properties
+  const highlightStartFrame = timeToFrame(quoteTimings.highlightStartTime, fps);
+  const highlightEndFrame = timeToFrame(quoteTimings.highlightEndTime, fps);
+  const highlightDurationInFrames = Math.max(1, highlightEndFrame - highlightStartFrame);
+  // The modal appears slightly after the narration starts...
+  const modalStartFrame = timeToFrame(quoteTimings.narrationStartTime, fps) + 15;
+  // ...and its duration is calculated to last until the *entire narration* ends.
+  const modalEndFrame = timeToFrame(quoteTimings.narrationEndTime, fps);
+  const modalDurationInFrames = Math.max(1, modalEndFrame - modalStartFrame);
+
+   const titleVisible = frame < timeToFrame(quoteTimings.narrationStartTime, fps) - 10;
+  
+  // --- The rest of your animation logic remains the same ---
   const pdfContainerWidth = pageWidth * scale;
   const pdfContainerHeight = pageHeight * scale;
 
   const bboxCenterX = (match.boundingBox.x + match.boundingBox.width / 2) * scale;
   const bboxCenterY = (pageHeight - match.boundingBox.y - match.boundingBox.height / 2) * scale;
-
-  const HIGHLIGHT_ANIMATION_DURATION = 34;
-  const quoteFrame = timeToFrame(quoteStartTime, fps);
-  const highlightStartFrame = quoteFrame - HIGHLIGHT_ANIMATION_DURATION;
-  const modalStartFrame = quoteFrame + 15;
-  const titleVisible = frame < highlightStartFrame - 10;
 
   const pdfSlideUp = interpolate(spring({ frame: frame - 5, fps, config: { damping: 100 } }), [0, 1], [videoHeight, 0]);
   const pdfOpacity = interpolate(frame, [5, 20], [0, 1], { extrapolateRight: "clamp" });
@@ -207,11 +348,9 @@ export const AudioSyncedScene = ({
     <AbsoluteFill className="bg-gray-950">
       <style>{fontCss}</style>
       {audioFile && <Audio src={staticFile(audioFile)} />}
-
-      {titleVisible && <PaperTitleCard title={paperTitle} visible startFrame={0} />}
+      <PaperTitleCard title={paperTitle} visible={titleVisible} startFrame={0} />
 
       <div className="grid grid-cols-5 gap-4 w-full h-full">
-        {/* LEFT PANEL: PDF */}
         <div className="col-span-3 relative w-full h-full">
           <div className="w-full h-full flex items-center justify-center p-8 z-10">
             <div
@@ -241,8 +380,8 @@ export const AudioSyncedScene = ({
                     bbox={match.boundingBox}
                     scale={scale}
                     pageHeight={pageHeight}
-                    startFrame={highlightStartFrame}
-                    highlightDuration={HIGHLIGHT_ANIMATION_DURATION}
+                           startFrame={highlightStartFrame}
+        highlightDuration={highlightDurationInFrames}
                   />
                 </svg>
               </AbsoluteFill>
@@ -250,9 +389,13 @@ export const AudioSyncedScene = ({
           </div>
         </div>
 
-        {/* RIGHT PANEL: MODAL */}
         <div className="col-span-2 flex items-center justify-center p-8 relative">
-          <MatchModal match={match} matchNumber={matchNumber} startFrame={modalStartFrame} />
+          <MatchModal
+            match={match}
+            matchNumber={matchNumber}
+            startFrame={modalStartFrame}
+            duration={modalDurationInFrames} // 👈 Use dynamic duration
+          />
         </div>
       </div>
     </AbsoluteFill>
