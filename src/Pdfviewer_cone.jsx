@@ -7,7 +7,7 @@ import {
   Img,
   staticFile,
   spring,
-  Audio,
+  Html5Audio,
 } from "remotion";
 
 // --- Font Loading ---
@@ -49,31 +49,33 @@ const PaperTitleCard = ({ title, visible, startFrame }) => {
 };
 
 
-// --- COMPONENT: Marker Highlight (Corrected for Top-Left Origin & SVG ViewBox) ---
-const MarkerHighlight = ({ bbox, pageHeight, startFrame,scale=2.5, highlightDuration = 34 }) => {
+const MarkerHighlight = ({ bbox, pageHeight, startFrame, scale=2.5, highlightDuration = 34 }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
 
   if (frame < startFrame) return null;
 
+  const relativeFrame = frame - startFrame;
+  
   const drawProgress = spring({
-    frame: frame - startFrame,
+    frame: relativeFrame,
     fps,
     config: { damping: 100, stiffness: 150 },
     durationInFrames: highlightDuration,
   });
   
-  // This works because the SVG viewBox matches the PDF's native coordinate system,
-  // and your bbox data uses a top-left origin, just like SVG.
   const y = (pageHeight - bbox.y - bbox.height) * scale;
   const x = bbox.x * scale;
   const width = bbox.width * scale;
   const height = bbox.height * scale;
 
+  // Calculate current width based on progress
+  const currentWidth = width * drawProgress;
+
   const pathData = `
     M ${x - 2},${y + 2}
-    L ${x + width * drawProgress},${y - 1}
-    L ${x + width * drawProgress},${y + height + 1}
+    L ${x + currentWidth},${y - 1}
+    L ${x + currentWidth},${y + height + 1}
     L ${x + 2},${y + height - 2}
     Z
   `;
@@ -87,7 +89,6 @@ const MarkerHighlight = ({ bbox, pageHeight, startFrame,scale=2.5, highlightDura
     />
   );
 };
-
 
 // --- COMPONENT: Handwritten Notes ---
 const HandwrittenNotes = ({ text, startFrame }) => {
@@ -134,7 +135,7 @@ const MatchModal = ({ match, matchNumber, startFrame, duration = 120 }) => {
 
 
 // --- MAIN SCENE: Rebuilt from the ground up with correct logic ---
-export const AudioSyncedScene = ({
+export const Html5AudioSyncedScene = ({
   match,
   matchNumber,
   pageWidth = 612,
@@ -174,7 +175,7 @@ export const AudioSyncedScene = ({
   return (
     <AbsoluteFill className="bg-gray-950">
       <style>{fontCss}</style>
-      {audioFile && <Audio src={staticFile(audioFile)} />}
+      {audioFile && <Html5Audio src={staticFile(audioFile)} />}
 
 
 

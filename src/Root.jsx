@@ -3,12 +3,11 @@ import { Composition } from 'remotion';
 import { AudioSyncedScene } from './Pdfviewer';
 
 // 1. Import your transcript data
-import  transcriptData  from './podcast_transcript.json';
+import  transcriptData  from './section_2.json';
 
 // 2. Define the data for your scene
 const matchData = {
-
-    "text": "To address this challenge, we propose   HERO   ( H ybrid   E nsemble   R eward   O ptimization), a reinforcement learning framework that integrates verifier-anchored and dense reward-model signals to provide reliable yet informative",
+    "text": "To address this challenge, we propose   HERO Hybrid   Ensemble   Reward   Optimization, a reinforcement learning framework that integrates verifier-anchored and dense reward-model signals to provide reliable yet informative",
     "page": 2,
     "boundingBox": {
       "x": 70.508,
@@ -32,7 +31,7 @@ export const RemotionRoot= () => (
       match: matchData,
       matchNumber: 1,
       pageImageFile: 'page_2 copy.png', // Your PDF page image
-      audioFile: 'podcast_generated_1760527617.wav', // Your audio file
+      audioFile: 'section_2.wav', // Your audio file
       paperTitle: 'Scaling Principle-Driven Reasoning with Synthetic Data',
     }}
   />
